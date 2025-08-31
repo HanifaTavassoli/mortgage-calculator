@@ -51,3 +51,42 @@
   border-bottom: 1.5px solid hsl(203, 41%, 72%);
   cursor: pointer;
 }
+
+.field {
+  margin-bottom: 2rem;
+}
+
+.field-label {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: hsl(200, 24%, 40%);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+.input-with-prefix {
+  border: 1px solid hsl(200, 24%, 40%);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.input-with-prefix:hover {
+  cursor: pointer;
+}
+
+.prefix {
+  padding: 1rem 1.2rem;
+  display: inline-block;
+  background-color: hsl(202, 86%, 94%);
+  color: hsl(200, 24%, 40%);
+  font-size: 1.4rem;
+}
