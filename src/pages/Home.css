@@ -17,3 +17,37 @@
   overflow: hidden;
   background-color: hsl(0, 0%, 100%);
 }
+
+/* ==================================================   */
+/* Form Panel */
+/* ==================================================   */
+.calc-panel--form {
+  height: 70%;
+  background-color: hsl(0, 0%, 100%);
+  padding: 3.2rem;
+}
+
+.panel-header {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+
+.panel-title {
+  font-size: 2rem;
+}
+
+.clear-btn {
+  border: none;
+  background-color: hsl(0, 0%, 100%);
+  justify-self: end;
+  color: hsl(200, 24%, 40%);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 0.2rem;
+  border-bottom: 1.5px solid hsl(203, 41%, 72%);
+  cursor: pointer;
+}
