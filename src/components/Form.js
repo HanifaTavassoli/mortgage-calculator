@@ -1,7 +1,8 @@
+import { useState } from "react";
 import calcIcon from "../assets/images/icon-calculator.svg";
 
 import Button from "./Button";
-
+import InputField from "../components/InputField";
 import RadioButton from "../components/RadioButton";
 
 function Form({
@@ -18,6 +19,44 @@ function Form({
 }) {
   return (
     <form className="mortgage-form">
+      <InputField
+        label="Mortgage Amount"
+        id="amount"
+        value={amount}
+        position="before"
+        onChange={setAmount}
+        errors=""
+        setErrors=""
+      >
+        <span className="prefix">£</span>
+      </InputField>
+
+      <div className="grid-2">
+        <InputField
+          label="Mortgage Term"
+          id="term"
+          value={term}
+          onChange={setTerm}
+          position="after"
+          errors=""
+          setErrors=""
+        >
+          <span className="prefix">years</span>
+        </InputField>
+
+        <InputField
+          label="Interest Rate"
+          id="rate"
+          value={rate}
+          onChange={setRate}
+          position="after"
+          errors=""
+          setErrors=""
+        >
+          <span className="prefix">%</span>
+        </InputField>
+      </div>
+
       <div className="field ">
         <span className="field-label">Mortgage Type</span>
         <div className="radio-group">
