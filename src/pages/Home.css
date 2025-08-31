@@ -159,3 +159,12 @@
   opacity: 0;
   transition: opacity 0.2s;
 }
+
+.radio-input:checked ~ .radio-label .radio-faux::after {
+  opacity: 1;
+}
+
+.radio-box:has(.radio-input:checked) {
+  background-color: hsla(61, 70%, 52%, 0.1);
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
