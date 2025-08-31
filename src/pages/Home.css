@@ -224,3 +224,35 @@
   background-color: hsla(61, 70%, 52%, 0.6);
   cursor: pointer;
 }
+
+/* ==================================================   */
+/* Result Panel */
+/* ==================================================   */
+
+.calc-panel--results {
+  border-bottom-left-radius: 8rem;
+  background-color: hsl(202, 55%, 16%);
+  color: hsl(203, 41%, 72%);
+  padding: 3.2rem;
+}
+
+.results-inner-empty {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.results-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+  color: hsl(0, 0%, 100%);
+}
+
+.results-desc {
+  font-size: 1.4rem;
+  margin-bottom: 2.4rem;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+}
