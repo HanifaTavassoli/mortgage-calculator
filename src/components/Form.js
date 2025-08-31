@@ -18,6 +18,28 @@ function Form({
   setTotalPay,
 }) {
   const [errors, setErrors] = useState({});
+  const calculateMortgage = (amount, years, annualRate, type) => {
+    const months = years * 12;
+    const monthlyRate = annualRate / 100 / 12;
+
+    if (type === "repayment") {
+      let monthlyPayment =
+        (amount * (monthlyRate * Math.pow(1 + monthlyRate, months))) /
+        (Math.pow(1 + monthlyRate, months) - 1);
+
+      let totalPayment = monthlyPayment * months;
+
+      monthlyPayment = monthlyPayment.toLocaleString("en-US", {
+        maximumFractionDigits: 2,
+      });
+      totalPayment = totalPayment.toLocaleString("en-US", {
+        maximumFractionDigits: 2,
+      });
+
+      setMonthlyPay(monthlyPayment);
+      setTotalPay(totalPayment);
+    }
+  };
 
   return (
     <form className="mortgage-form">
