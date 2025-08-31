@@ -274,3 +274,25 @@
   font-size: 1.2rem;
   font-weight: 500;
 }
+
+.monthly-amount {
+  color: hsl(61, 70%, 52%);
+  font-size: 4.4rem;
+  font-weight: 700;
+}
+.line {
+  border: 0;
+  height: 1px;
+  background: hsl(200, 24%, 40%);
+  margin: 3.2rem 0;
+}
+.total-text {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.total-amount {
+  font-size: 2rem;
+  font-weight: 600;
+  color: hsl(202, 86%, 94%);
+}
