@@ -1,4 +1,5 @@
 import "./Home.css";
+import Button from "../components/Button";
 
 function Home() {
   return (
@@ -9,6 +10,8 @@ function Home() {
             <div className="panel-inner">
               <div className="panel-header">
                 <h1 className="panel-title"> Mortgage Calculator</h1>
+
+                <Button className="clear-btn">Clear All</Button>
               </div>
             </div>
           </div>
