@@ -168,3 +168,40 @@
   background-color: hsla(61, 70%, 52%, 0.1);
   border: 1.2px solid hsl(61, 70%, 52%);
 }
+
+/* ==================================================   */
+/* Error Stats */
+/* ==================================================   */
+
+.input-with-prefix.error {
+  border: 1px solid hsl(4, 69%, 50%);
+}
+
+.input-with-prefix.error .prefix {
+  background-color: hsl(4, 69%, 50%);
+  color: hsl(202, 86%, 94%);
+}
+
+.input-with-prefix.error:has(input:focus) {
+  border: 1.2px solid hsl(4, 69%, 50%);
+}
+
+.input-with-prefix.error:has(input:focus) .prefix {
+  background-color: hsl(4, 69%, 50%);
+  color: hsl(202, 86%, 94%);
+}
+
+.input-with-prefix:focus-within {
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+.input-with-prefix:focus-within .prefix {
+  background-color: hsl(61, 70%, 52%);
+  color: hsl(202, 86%, 94%);
+}
+
+.error-message {
+  color: hsl(4, 69%, 50%);
+  font-weight: 600;
+  padding-top: 0.4rem;
+}
