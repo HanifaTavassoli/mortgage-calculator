@@ -312,3 +312,29 @@
   background-color: hsla(61, 70%, 52%, 0.1);
   border: 1.2px solid hsl(61, 70%, 52%);
 }
+
+/* ==================================================   */
+/* Media Query */
+/* ==================================================   */
+
+@media (max-width: 900px) {
+  .calc-panel--form,
+  .calc-panel--results {
+    padding: 2rem;
+  }
+
+  .panel-title {
+    font-size: 1.8rem;
+  }
+
+  .btn-calc {
+    font-size: 1.4rem;
+  }
+
+  .monthly-amount {
+    font-size: 3rem;
+  }
+  .total-amount {
+    font-size: 1.6rem;
+  }
+}
