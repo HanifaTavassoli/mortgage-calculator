@@ -14,7 +14,7 @@ function InputField({
         <label htmlFor={id} className="field-label">
           {label}
         </label>
-        <div className={`input-with-prefix  `}>
+        <div className={`input-with-prefix  ${errors ? "error" : ""}`}>
           <input
             type="number"
             name={id}
@@ -23,7 +23,7 @@ function InputField({
             className="input input--large"
           />
         </div>
-        <p className={``}>{errors && ""}</p>
+        <p className={`${errors ? "error-message" : ""}`}>{errors && ""}</p>
       </div>
     </>
   );
