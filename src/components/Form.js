@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 import RadioButton from "../components/RadioButton";
 
 function Form() {
@@ -18,12 +20,17 @@ function Form() {
             id="interest"
             value="interest"
             type=""
-            onChange="s"
+            onChange=""
           />
         </div>
       </div>
 
-      <div className="field"></div>
+      <div className="field">
+        <Button className="btn-calc" type="submit">
+          <img src="" alt="calc img" className="btn-icon" />
+          <span>Calculate Repayments</span>
+        </Button>
+      </div>
     </form>
   );
 }
