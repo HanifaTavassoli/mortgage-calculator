@@ -1,3 +1,5 @@
+import calcIcon from "../assets/images/icon-calculator.svg";
+
 import Button from "./Button";
 
 import RadioButton from "../components/RadioButton";
@@ -27,7 +29,7 @@ function Form() {
 
       <div className="field">
         <Button className="btn-calc" type="submit">
-          <img src="" alt="calc img" className="btn-icon" />
+          <img src={calcIcon} alt="calc img" className="btn-icon" />
           <span>Calculate Repayments</span>
         </Button>
       </div>
