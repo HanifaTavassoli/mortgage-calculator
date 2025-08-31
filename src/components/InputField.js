@@ -8,6 +8,15 @@ function InputField({
   onChange,
   children,
 }) {
+  const handleChange = (e) => {
+    const val = e.target.value;
+    if (!val || Number(val) <= 0) {
+      setErrors((prev) => ({ ...prev, [id]: `Enter a valid ${id} > 0` }));
+    } else {
+      setErrors((prev) => ({ ...prev, [id]: "" }));
+    }
+    onChange(val);
+  };
   return (
     <>
       <div className="field">
@@ -21,6 +30,7 @@ function InputField({
             name={id}
             id={id}
             value={value}
+            onChange={handleChange}
             className="input input--large"
           />
           {position === "after" && children}
