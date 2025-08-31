@@ -4,7 +4,18 @@ import Button from "./Button";
 
 import RadioButton from "../components/RadioButton";
 
-function Form() {
+function Form({
+  type,
+  setType,
+  amount,
+  setAmount,
+  term,
+  setTerm,
+  rate,
+  setRate,
+  setMonthlyPay,
+  setTotalPay,
+}) {
   return (
     <form className="mortgage-form">
       <div className="field ">
@@ -14,15 +25,15 @@ function Form() {
             label="Repayment"
             id="repayment"
             value="repayment"
-            type=""
-            onChange=""
+            type={type}
+            onChange={setType}
           />
           <RadioButton
             label="Interest Only"
             id="interest"
             value="interest"
-            type=""
-            onChange=""
+            type={type}
+            onChange={setType}
           />
         </div>
       </div>
