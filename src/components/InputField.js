@@ -15,6 +15,7 @@ function InputField({
           {label}
         </label>
         <div className={`input-with-prefix  ${errors ? "error" : ""}`}>
+          {position === "before" && children}
           <input
             type="number"
             name={id}
@@ -22,6 +23,7 @@ function InputField({
             value={value}
             className="input input--large"
           />
+          {position === "after" && children}
         </div>
         <p className={`${errors ? "error-message" : ""}`}>{errors && ""}</p>
       </div>
