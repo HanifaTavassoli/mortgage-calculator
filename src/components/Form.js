@@ -17,6 +17,8 @@ function Form({
   setMonthlyPay,
   setTotalPay,
 }) {
+  const [errors, setErrors] = useState({});
+
   return (
     <form className="mortgage-form">
       <InputField
@@ -25,8 +27,8 @@ function Form({
         value={amount}
         position="before"
         onChange={setAmount}
-        errors=""
-        setErrors=""
+        errors={errors.amount}
+        setErrors={setErrors}
       >
         <span className="prefix">£</span>
       </InputField>
@@ -38,8 +40,8 @@ function Form({
           value={term}
           onChange={setTerm}
           position="after"
-          errors=""
-          setErrors=""
+          errors={errors.term}
+          setErrors={setErrors}
         >
           <span className="prefix">years</span>
         </InputField>
@@ -50,8 +52,8 @@ function Form({
           value={rate}
           onChange={setRate}
           position="after"
-          errors=""
-          setErrors=""
+          errors={errors.rate}
+          setErrors={setErrors}
         >
           <span className="prefix">%</span>
         </InputField>
