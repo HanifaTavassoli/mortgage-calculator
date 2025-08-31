@@ -81,8 +81,13 @@ function Form({
     return Object.keys(tempErrors).length === 0;
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formValidation())
+      calculateMortgage(Number(amount), Number(term), Number(rate), type);
+  };
   return (
-    <form className="mortgage-form">
+    <form className="mortgage-form" onSubmit={handleSubmit}>
       <InputField
         label="Mortgage Amount"
         id="amount"
