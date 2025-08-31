@@ -39,6 +39,22 @@ function Form({
       setMonthlyPay(monthlyPayment);
       setTotalPay(totalPayment);
     }
+
+    if (type === "interest") {
+      let monthlyPayment = amount * monthlyRate;
+      let totalInterest = monthlyPayment * months;
+      let totalPayment = totalInterest + amount;
+
+      monthlyPayment = monthlyPayment.toLocaleString("en-US", {
+        maximumFractionDigits: 2,
+      });
+      totalPayment = totalPayment.toLocaleString("en-US", {
+        maximumFractionDigits: 2,
+      });
+
+      setMonthlyPay(monthlyPayment);
+      setTotalPay(totalPayment);
+    }
   };
 
   return (
