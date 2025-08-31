@@ -296,3 +296,19 @@
   font-weight: 600;
   color: hsl(202, 86%, 94%);
 }
+
+/* ==================================================   */
+/* Active State */
+/* ==================================================   */
+.input-with-prefix:has(.input:focus) {
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+.input-with-prefix:has(.input:focus) .prefix {
+  background-color: hsl(61, 70%, 52%);
+}
+
+.radio-box:hover {
+  background-color: hsla(61, 70%, 52%, 0.1);
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
