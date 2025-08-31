@@ -90,3 +90,27 @@
   color: hsl(200, 24%, 40%);
   font-size: 1.4rem;
 }
+
+.input {
+  border: none;
+  display: inline-block;
+  width: 100%;
+  outline: none;
+  padding-left: 1.2rem;
+  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.radio-group {
+  margin-bottom: 3.2rem;
+}
+.radio-label {
+  margin-left: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  position: relative;
+
+  cursor: pointer;
+  position: relative;
+  padding-left: 2.4rem;
+}
