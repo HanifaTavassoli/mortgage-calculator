@@ -114,3 +114,22 @@
   position: relative;
   padding-left: 2.4rem;
 }
+
+.radio-box {
+  border: 1px solid hsl(200, 24%, 40%);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-group .radio-box:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
