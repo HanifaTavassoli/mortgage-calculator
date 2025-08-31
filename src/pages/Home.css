@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(202, 86%, 94%);
+  color: hsl(202, 55%, 16%);
+  padding: 1.2rem;
+}
+
+.calculator-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80rem;
+  margin: 0 auto;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+}
