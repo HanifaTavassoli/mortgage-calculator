@@ -708,3 +708,13 @@
     border-radius: 0;
   }
 }
+
+@media (max-width: 480px) {
+  html {
+    font-size: 56.25%;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
