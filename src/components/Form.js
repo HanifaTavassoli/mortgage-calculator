@@ -57,6 +57,30 @@ function Form({
     }
   };
 
+  const formValidation = () => {
+    const numAmount = Number(amount);
+    const numTerm = Number(term);
+    const numRate = Number(rate);
+    let tempErrors = {};
+    if (!amount) tempErrors.amount = "Amount is required";
+    else if (isNaN(numAmount) || numAmount <= 0)
+      tempErrors.amount = "Enter a valid amount > 0";
+
+    if (!term) tempErrors.term = "Term is required";
+    else if (isNaN(numTerm) || numTerm <= 0)
+      tempErrors.term = "Enter a valid term > 0";
+
+    if (!rate) tempErrors.rate = "Rate is required";
+    else if (isNaN(numRate) || numRate <= 0)
+      tempErrors.rate = "Enter a valid rate > 0";
+
+    if (type === "") tempErrors.type = "Type is required";
+
+    setErrors(tempErrors);
+
+    return Object.keys(tempErrors).length === 0;
+  };
+
   return (
     <form className="mortgage-form">
       <InputField
