@@ -23,6 +23,15 @@ function Home() {
     setTerm,
   };
 
+  const handleClear = () => {
+    setType("repayment");
+    setAmount(0);
+    setRate(0);
+    setTerm(0);
+    setMonthlyPay(0);
+    setTotalPay(0);
+  };
+
   return (
     <>
       <div className="container">
@@ -32,7 +41,9 @@ function Home() {
               <div className="panel-header">
                 <h1 className="panel-title"> Mortgage Calculator</h1>
 
-                <Button className="clear-btn">Clear All</Button>
+                <Button className="clear-btn" clickEvent={handleClear}>
+                  Clear All
+                </Button>
               </div>
 
               <Form
