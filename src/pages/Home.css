@@ -205,3 +205,22 @@
   font-weight: 600;
   padding-top: 0.4rem;
 }
+
+.btn-calc {
+  background-color: hsl(61, 70%, 52%);
+  padding: 1.2rem 3.2rem;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  justify-content: space-between;
+}
+
+.btn-calc:hover {
+  background-color: hsla(61, 70%, 52%, 0.6);
+  cursor: pointer;
+}
