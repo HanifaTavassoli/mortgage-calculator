@@ -1,0 +1,720 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(202, 86%, 94%);
+  color: hsl(202, 55%, 16%);
+  padding: 1.2rem;
+}
+
+.calculator-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80rem;
+  margin: 0 auto;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+}
+
+/* ==================================================   */
+/* Form Panel */
+/* ==================================================   */
+.calc-panel--form {
+  height: 70%;
+  background-color: hsl(0, 0%, 100%);
+  padding: 3.2rem;
+}
+
+.panel-header {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+
+.panel-title {
+  font-size: 2rem;
+}
+
+.clear-btn {
+  border: none;
+  background-color: hsl(0, 0%, 100%);
+  justify-self: end;
+  color: hsl(200, 24%, 40%);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 0.2rem;
+  border-bottom: 1.5px solid hsl(203, 41%, 72%);
+  cursor: pointer;
+}
+
+.field {
+  margin-bottom: 2rem;
+}
+
+.field-label {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: hsl(200, 24%, 40%);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+.input-with-prefix {
+  border: 1px solid hsl(200, 24%, 40%);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.input-with-prefix:hover {
+  cursor: pointer;
+}
+
+.prefix {
+  padding: 1rem 1.2rem;
+  display: inline-block;
+  background-color: hsl(202, 86%, 94%);
+  color: hsl(200, 24%, 40%);
+  font-size: 1.4rem;
+}
+
+.input {
+  border: none;
+  display: inline-block;
+  width: 100%;
+  outline: none;
+  padding-left: 1.2rem;
+  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.radio-group {
+  margin-bottom: 3.2rem;
+}
+.radio-label {
+  margin-left: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  position: relative;
+
+  cursor: pointer;
+  position: relative;
+  padding-left: 2.4rem;
+}
+
+.radio-box {
+  border: 1px solid hsl(200, 24%, 40%);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-group .radio-box:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+
+.radio-faux {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1.5px solid hsl(61, 70%, 52%);
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0rem;
+}
+
+.radio-faux::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(61, 70%, 52%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.radio-input:checked ~ .radio-label .radio-faux::after {
+  opacity: 1;
+}
+
+.radio-box:has(.radio-input:checked) {
+  background-color: hsla(61, 70%, 52%, 0.1);
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+/* ==================================================   */
+/* Error Stats */
+/* ==================================================   */
+
+.input-with-prefix.error {
+  border: 1px solid hsl(4, 69%, 50%);
+}
+
+.input-with-prefix.error .prefix {
+  background-color: hsl(4, 69%, 50%);
+  color: hsl(202, 86%, 94%);
+}
+
+.input-with-prefix.error:has(input:focus) {
+  border: 1.2px solid hsl(4, 69%, 50%);
+}
+
+.input-with-prefix.error:has(input:focus) .prefix {
+  background-color: hsl(4, 69%, 50%);
+  color: hsl(202, 86%, 94%);
+}
+
+.input-with-prefix:focus-within {
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+.input-with-prefix:focus-within .prefix {
+  background-color: hsl(61, 70%, 52%);
+  color: hsl(202, 86%, 94%);
+}
+
+.error-message {
+  color: hsl(4, 69%, 50%);
+  font-weight: 600;
+  padding-top: 0.4rem;
+}
+
+.btn-calc {
+  background-color: hsl(61, 70%, 52%);
+  padding: 1.2rem 3.2rem;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  justify-content: space-between;
+}
+
+.btn-calc:hover {
+  background-color: hsla(61, 70%, 52%, 0.6);
+  cursor: pointer;
+}
+
+/* ==================================================   */
+/* Result Panel */
+/* ==================================================   */
+
+.calc-panel--results {
+  border-bottom-left-radius: 8rem;
+  background-color: hsl(202, 55%, 16%);
+  color: hsl(203, 41%, 72%);
+  padding: 3.2rem;
+}
+
+.results-inner-empty {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.results-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+  color: hsl(0, 0%, 100%);
+}
+
+.results-desc {
+  font-size: 1.4rem;
+  margin-bottom: 2.4rem;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+}
+
+.results-card {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 3.2rem 2.4rem;
+  border-top: 3px solid hsl(61, 70%, 52%);
+}
+
+.monthly-text {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.monthly-text,
+.total-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.monthly-amount {
+  color: hsl(61, 70%, 52%);
+  font-size: 4.4rem;
+  font-weight: 700;
+}
+.line {
+  border: 0;
+  height: 1px;
+  background: hsl(200, 24%, 40%);
+  margin: 3.2rem 0;
+}
+.total-text {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.total-amount {
+  font-size: 2rem;
+  font-weight: 600;
+  color: hsl(202, 86%, 94%);
+}
+
+/* ==================================================   */
+/* Active State */
+/* ==================================================   */
+.input-with-prefix:has(.input:focus) {
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+.input-with-prefix:has(.input:focus) .prefix {
+  background-color: hsl(61, 70%, 52%);
+}
+
+.radio-box:hover {
+  background-color: hsla(61, 70%, 52%, 0.1);
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+/* ==================================================   */
+/* Media Query */
+/* ==================================================   */
+
+@media (max-width: 900px) {
+  .calc-panel--form,
+  .calc-panel--results {
+    padding: 2rem;
+  }
+
+  .panel-title {
+    font-size: 1.8rem;
+  }
+
+  .btn-calc {
+    font-size: 1.4rem;
+  }
+
+  .monthly-amount {
+    font-size: 3rem;
+  }
+  .total-amount {
+    font-size: 1.6rem;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(202, 86%, 94%);
+  color: hsl(202, 55%, 16%);
+  padding: 1.2rem;
+}
+
+.calculator-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80rem;
+  margin: 0 auto;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+}
+
+/* ==================================================   */
+/* Form Panel */
+/* ==================================================   */
+.calc-panel--form {
+  height: 70%;
+  background-color: hsl(0, 0%, 100%);
+  padding: 3.2rem;
+}
+
+.panel-header {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+
+.panel-title {
+  font-size: 2rem;
+}
+
+.clear-btn {
+  border: none;
+  background-color: hsl(0, 0%, 100%);
+  justify-self: end;
+  color: hsl(200, 24%, 40%);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 0.2rem;
+  border-bottom: 1.5px solid hsl(203, 41%, 72%);
+  cursor: pointer;
+}
+
+.field {
+  margin-bottom: 2rem;
+}
+
+.field-label {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: hsl(200, 24%, 40%);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+.input-with-prefix {
+  border: 1px solid hsl(200, 24%, 40%);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.input-with-prefix:hover {
+  cursor: pointer;
+}
+
+.prefix {
+  padding: 1rem 1.2rem;
+  display: inline-block;
+  background-color: hsl(202, 86%, 94%);
+  color: hsl(200, 24%, 40%);
+  font-size: 1.4rem;
+}
+
+.input {
+  border: none;
+  display: inline-block;
+  width: 100%;
+  outline: none;
+  padding-left: 1.2rem;
+  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.radio-group {
+  margin-bottom: 3.2rem;
+}
+.radio-label {
+  margin-left: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  position: relative;
+
+  cursor: pointer;
+  position: relative;
+  padding-left: 2.4rem;
+}
+
+.radio-box {
+  border: 1px solid hsl(200, 24%, 40%);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-group .radio-box:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+
+.radio-faux {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1.5px solid hsl(61, 70%, 52%);
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0rem;
+}
+
+.radio-faux::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(61, 70%, 52%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.radio-input:checked ~ .radio-label .radio-faux::after {
+  opacity: 1;
+}
+
+.radio-box:has(.radio-input:checked) {
+  background-color: hsla(61, 70%, 52%, 0.1);
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+/* ==================================================   */
+/* Error Stats */
+/* ==================================================   */
+
+.input-with-prefix.error {
+  border: 1px solid hsl(4, 69%, 50%);
+}
+
+.input-with-prefix.error .prefix {
+  background-color: hsl(4, 69%, 50%);
+  color: hsl(202, 86%, 94%);
+}
+
+.input-with-prefix.error:has(input:focus) {
+  border: 1.2px solid hsl(4, 69%, 50%);
+}
+
+.input-with-prefix.error:has(input:focus) .prefix {
+  background-color: hsl(4, 69%, 50%);
+  color: hsl(202, 86%, 94%);
+}
+
+.input-with-prefix:focus-within {
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+.input-with-prefix:focus-within .prefix {
+  background-color: hsl(61, 70%, 52%);
+  color: hsl(202, 86%, 94%);
+}
+
+.error-message {
+  color: hsl(4, 69%, 50%);
+  font-weight: 600;
+  padding-top: 0.4rem;
+}
+
+.btn-calc {
+  background-color: hsl(61, 70%, 52%);
+  padding: 1.2rem 3.2rem;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  justify-content: space-between;
+}
+
+.btn-calc:hover {
+  background-color: hsla(61, 70%, 52%, 0.6);
+  cursor: pointer;
+}
+
+/* ==================================================   */
+/* Result Panel */
+/* ==================================================   */
+
+.calc-panel--results {
+  border-bottom-left-radius: 8rem;
+  background-color: hsl(202, 55%, 16%);
+  color: hsl(203, 41%, 72%);
+  padding: 3.2rem;
+}
+
+.results-inner-empty {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.results-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+  color: hsl(0, 0%, 100%);
+}
+
+.results-desc {
+  font-size: 1.4rem;
+  margin-bottom: 2.4rem;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+}
+
+.results-card {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 3.2rem 2.4rem;
+  border-top: 3px solid hsl(61, 70%, 52%);
+}
+
+.monthly-text {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.monthly-text,
+.total-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.monthly-amount {
+  color: hsl(61, 70%, 52%);
+  font-size: 4.4rem;
+  font-weight: 700;
+}
+.line {
+  border: 0;
+  height: 1px;
+  background: hsl(200, 24%, 40%);
+  margin: 3.2rem 0;
+}
+.total-text {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.total-amount {
+  font-size: 2rem;
+  font-weight: 600;
+  color: hsl(202, 86%, 94%);
+}
+
+/* ==================================================   */
+/* Active State */
+/* ==================================================   */
+.input-with-prefix:has(.input:focus) {
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+.input-with-prefix:has(.input:focus) .prefix {
+  background-color: hsl(61, 70%, 52%);
+}
+
+.radio-box:hover {
+  background-color: hsla(61, 70%, 52%, 0.1);
+  border: 1.2px solid hsl(61, 70%, 52%);
+}
+
+/* ==================================================   */
+/* Media Query */
+/* ==================================================   */
+
+@media (max-width: 900px) {
+  .calc-panel--form,
+  .calc-panel--results {
+    padding: 2rem;
+  }
+
+  .panel-title {
+    font-size: 1.8rem;
+  }
+
+  .btn-calc {
+    font-size: 1.4rem;
+  }
+
+  .monthly-amount {
+    font-size: 3rem;
+  }
+  .total-amount {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.2rem;
+  }
+  .calculator-card {
+    grid-template-columns: 1fr;
+    border-radius: 0;
+  }
+
+  .btn-calc {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .panel-header {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .clear-btn {
+    justify-self: start;
+    margin-top: 0.4rem;
+  }
+
+  .calc-panel--results {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 56.25%;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}

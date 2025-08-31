@@ -1,10 +1,10 @@
+import Home from "./pages/Home";
 import "./App.css";
-
 function App() {
   return (
-    <div>
-      <h1>mortgage calculator</h1>
-    </div>
+    <>
+      <Home />
+    </>
   );
 }
 

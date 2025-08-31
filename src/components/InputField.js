@@ -15,29 +15,28 @@ function InputField({
     } else {
       setErrors((prev) => ({ ...prev, [id]: "" }));
     }
-    onChange(val);
+    onChange && onChange(val);
   };
+
   return (
-    <>
-      <div className="field">
-        <label htmlFor={id} className="field-label">
-          {label}
-        </label>
-        <div className={`input-with-prefix  ${errors ? "error" : ""}`}>
-          {position === "before" && children}
-          <input
-            type="number"
-            name={id}
-            id={id}
-            value={value}
-            onChange={handleChange}
-            className="input input--large"
-          />
-          {position === "after" && children}
-        </div>
-        <p className={`${errors ? "error-message" : ""}`}>{errors && ""}</p>
+    <div className="field">
+      <label htmlFor={id} className="field-label">
+        {label}
+      </label>
+      <div className={`input-with-prefix ${errors ? "error" : ""}`}>
+        {position === "before" && children}
+        <input
+          type="number"
+          name={id}
+          id={id}
+          value={value}
+          onChange={handleChange}
+          className="input input--large"
+        />
+        {position === "after" && children}
       </div>
-    </>
+      {errors && <p className="error-message">{errors}</p>}
+    </div>
   );
 }
 
